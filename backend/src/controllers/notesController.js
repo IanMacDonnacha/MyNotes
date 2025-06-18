@@ -14,9 +14,3 @@ export function deleteNote(req, res) {
     res.status(200).json({message: "You're note has been deleted!"});
 }
 
-export default {
-    getAllNotes: getAllNotes,
-    createNote: createNote,
-    updateNote: updateNote,
-    deleteNote: deleteNote,
-}
