@@ -1,10 +1,16 @@
 import express from 'express';
+import cors from 'cors';
 import notesRoutes from './routes/notesRoutes.js';
 import rateLimiter from './middleware/rateLimiter.js';
 import { connectDB } from './config/db.js';
 const app = express();
 
 // middleware - always before routes
+app.use(
+  cors({
+    origin: 'http://localhost:5173',
+  })
+);
 app.use(express.json()); // Allows access to req.body
 app.use(rateLimiter);
 
